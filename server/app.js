@@ -7,7 +7,7 @@ let sessionId = 0;
 let messageId = 0;
 
 const greeting = JSON.stringify({
-    senderId: "0",
+    senderId: "Server",
     content: "Hello from the server!",
     id: "greet-0"
 });
@@ -16,22 +16,22 @@ const greeting = JSON.stringify({
 
 
 server.on('connection', socket =>{
-    const id = ++sessionId
+    const id = `${++sessionId}`
     sessions[id] = socket
 
     socket.send(greeting)
 
     socket.on('message', message=>{
 
-        const msg = JSON.parse(message)
-        msg.id = `${++messageId}`
-        console.log(msg)
+        const incoming = JSON.parse(message)
 
-        if(msg.recipientId === ""){
-            for (let session in sessions) {
-                console.log(sessions[session]);
-    
-                sessions[session].send(JSON.stringify(msg))
+        const outgoing = {senderId: id, content: incoming.content, id: `${messageId++}`}
+
+        console.log(outgoing)
+
+        if(incoming.recipientId === ""){
+            for (let session in sessions) {   
+                sessions[session].send(JSON.stringify(outgoing))
     }
         }
         
