@@ -1,0 +1,28 @@
+{
+  "name": "10w-bee-chat-chuksali",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"> <img src=\"logo.png\" width=\"200px\" alt=\"Bee Mail Logo\"> </p>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corndel-swe/10w-bee-chat-ChuksAli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corndel-swe/10w-bee-chat-ChuksAli/issues"
+  },
+  "homepage": "https://github.com/corndel-swe/10w-bee-chat-ChuksAli#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "ws": "^8.19.0"
+  }
+}
